@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+  test:
+    build: .
+    command: ["pytest", "tests"]
+    volumes:
+      - .:/app
